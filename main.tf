@@ -1,3 +1,21 @@
+
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.70.0"
+    }
+  }
+
+  required_version = ">= 0.14.9"
+}
+
+
+
+
+
+
+
 #Create VPC in us-east-1
 resource "aws_vpc" "vpc_master" {
   provider             = aws.region-master
