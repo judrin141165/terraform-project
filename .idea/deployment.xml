@@ -5,7 +5,7 @@
       <paths name="webserver-1-ansible-master">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/terraform-project/mongo" local="$PROJECT_DIR$/Custom_VPC_Terraform" web="/" />
           </mappings>
         </serverdata>
       </paths>
