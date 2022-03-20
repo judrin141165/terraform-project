@@ -1,5 +1,5 @@
 
-#this template is used for setting up custom VPC Module
+#this template is used for setting up custom VPC Module with db instance and ec2 instance
 
 
 
@@ -106,10 +106,13 @@ name = "dbs_security_group"
     to_port   = 3306
     cidr_blocks = ["10.0.0.0/16"]
 
+
   }
 }
 resource "aws_security_group" "webserver_security_group" {
-  name = "webserver_security"
+  name = "webserver_security_Group"
+
+
   ingress {
     from_port = 443
     protocol  = "tcp"
@@ -150,6 +153,7 @@ resource "aws_db_instance" "db" {
   username                  = "admin"
   password                  = "password"
   skip_final_snapshot       = true
+  availability_zone = "us-east-2a"
 
   #  security_group_names = aws_security_group.DBS_security_group
 }

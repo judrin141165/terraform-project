@@ -21,4 +21,14 @@ resource "aws_instance" "app_server" {
   tags = {
     Name = "ExampleAppServerInstance"
   }
+
+
+}
+resource "aws_instance" "ec2_remote" {
+  ami = "ami-09e67e426f25ce0d7"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name="ec2_remote"
+  }
 }
