@@ -1,16 +1,12 @@
 provider "aws" {
-  profile    = "var.profile"
-  region     = "us-east-2"
-  alias      = "region-master"
-  access_key = "AKIAYMIH6UZFVY6NANPL"
-  secret_key = "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"
+  profile = "deault"
+  region  = "us-east-2"
+  alias   = "region-master"
 }
 
 provider "aws" {
-profile = "var.profile"
+profile = "default"
 region = "us-east-1"
 alias = "region-worker"
-access_key = "AKIAYMIH6UZFVY6NANPL"
-secret_key = "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"
 
 }

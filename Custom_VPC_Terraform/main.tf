@@ -100,6 +100,7 @@ output "vpc_arn" {
 resource "aws_security_group" "DBS_security_group" {
 name = "dbs_security_group"
   description = "name_of_dbs_security_group"
+
   ingress {
     from_port = 3306
     protocol  = "tcp"
@@ -149,11 +150,13 @@ resource "aws_db_instance" "db" {
   allocated_storage         = 10
   engine                    = "mysql"
   engine_version            = "5.7"
-  name                      = var.name
+
   username                  = "admin"
   password                  = "password"
   skip_final_snapshot       = true
   availability_zone = "us-east-2a"
+  vpc_security_group_ids = [aws_security_group.DBS_security_group.id]
+
 
   #  security_group_names = aws_security_group.DBS_security_group
 }
