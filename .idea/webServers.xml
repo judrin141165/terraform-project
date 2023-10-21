@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="a392f10c-2c85-4108-9286-58a49de45825" name="webserver-1-ansible-master">
-        <fileTransfer rootFolder="/home/ec2-user" accessType="SFTP" host="52.73.51.232" port="22" sshConfigId="23cb6522-5023-4a1f-b0c1-6294a8428aad" sshConfig="ec2-user@52.73.51.232:22 key" keyPair="true">
+        <fileTransfer rootFolder="/home/ec2-user" accessType="SFTP" host="44.217.51.255" port="22" sshConfigId="23cb6522-5023-4a1f-b0c1-6294a8428aad" sshConfig="ec2-user@44.217.51.255:22 key" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

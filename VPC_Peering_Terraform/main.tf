@@ -101,23 +101,28 @@ resource "aws_vpc_peering_connection" "useast1-uswest2" {
 resource "aws_vpc_peering_connection_accepter" "acceept_peering" {
   vpc_peering_connection_id = "aws_vpc_peering_connection.useast1-uswest2.id"
   provider = aws.region-worker
-  auto_accept = [true]
+  auto_accept = true
 }
 
 #Create Routetable in us-east-1 to IGW
 resource "aws_route_table" "internetroute" {
-  vpc_id = "aws_vpc.vpc_master.id"
+  vpc_id   = "aws_vpc.vpc_master.id"
   provider = aws.region-master
   route {
     cidr_block = "0.0.0.0/0"
     gateway_id = "aws_internet_gateway.igw.id"
   }
+
+}
   lifecycle {
     ignore_changes = [true]
   }
-  tags = "Name=IGW_Routetable_us-east-1"
 
+  tags = {
+    Name="IGW_Routetable_us-east-1"
   }
+
+
 #Create Routetable in us-east-1 to VPC peering
 resource "aws_route_table" "vpc_peering_route" {
   vpc_id = "aws_vpc.vpc_master.id"
